@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.CheckBox?>
+<VBox spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.empresa.demoactividad014.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <GridPane>
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+
+        <Label text="Correo:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="emailInput" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <PasswordField fx:id="passwordInput" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Confirmar Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <PasswordField fx:id="confirmPasswordInput" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Fecha de alta:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <CheckBox text="Activar privacidad" fx:id="privacyCheckBox" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+        <Button text="Registrarse" onAction="#registerUser" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    </GridPane>
+
+    <Button text="Iniciar Sesión" onAction="#switchToLoginView"/>
 </VBox>
